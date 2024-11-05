@@ -43,8 +43,9 @@ public class Menu {
 
                 System.out.println("11. Keluar");
 
-                System.out.print("Pilih menu: ");
+                System.out.print("\nPilih menu: ");
                 int pilihanMenu = Integer.parseInt(scanner.nextLine());
+                System.out.println();
 
                 switch (pilihanMenu) {
                     case 1:
