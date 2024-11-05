@@ -1,3 +1,4 @@
+import view.Menu;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -5,5 +6,6 @@ public class Main {
         System.out.flush();
 
         System.out.println("--- INVENTORY APP ---");
+        Menu.tampilkan();
     }
 }
