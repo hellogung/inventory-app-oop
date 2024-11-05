@@ -1,3 +1,5 @@
+package model;
+
 public class Produk {
     private String kode;
     private String nama;

@@ -1,4 +1,8 @@
+package service;
 import java.util.ArrayList;
+
+import model.Kategori;
+import model.Produk;
 
 public class Inventory {
     // class Produk nya masih sementara

@@ -1,4 +1,8 @@
+package controller;
 import java.util.Scanner;
+
+import model.Produk;
+import service.Inventory;
 
 public class InventoryController {
     private Inventory inventory;
