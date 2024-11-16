@@ -59,17 +59,23 @@ public class Inventory {
         String kodeBaru = produkBaru.getKode();
         for (int i = 0; i < produkList.size(); i++) {
             if (produkList.get(i).getKode().equalsIgnoreCase(kode)) {
+                if (kode.equalsIgnoreCase(kodeBaru)) {
+                    produkList.set(i, produkBaru);
+                    System.out.println("Produk berhasil diubah.");
+                    return;
+                }
+
                 if (!this.cekProduk(kodeBaru)) {
                     produkList.set(i, produkBaru);
                     System.out.println("Produk berhasil diubah.");
                     return;
                 } else {
-                    System.out.println("Kode Produk harus unik " + kodeBaru);
+                    System.out.printf("kode produk '%s' sudah terpakai \n", kodeBaru);
                     return;
                 }
             }
         }
-        System.out.println("Produk tidak ditemukan.");
+        System.out.printf("Produk dengan kode %s tidak ditemukan \n", kode);
     }
 
     public void hapusProduk(String kode) {

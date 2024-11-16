@@ -58,17 +58,27 @@ public class InventoryController {
         System.out.println("---------------------------------------------------------------");
         System.out.println("Silahkan masukkan data yang ingin dirubah");
         System.out.println();
-        System.out.print("Masukkan kode produk: ");
+
+        System.out.printf("Masukkan kode produk (%s): ", oldProduk.getKode());
         String kode = scanner.nextLine();
-        System.out.print("Masukkan nama produk: ");
+        kode = !"".equals(kode.trim()) ? kode : oldProduk.getKode();
+        
+        System.out.printf("Masukkan nama produk (%s): ", oldProduk.getNama());
         String nama = scanner.nextLine();
-        System.out.print("Masukkan kategori produk: ");
+        nama = !"".equals(nama.trim()) ? nama : oldProduk.getNama();
+        
+        System.out.printf("Masukkan kategori produk (%s): ", oldProduk.getKategori());
         String kategori = scanner.nextLine();
-        System.out.print("Masukkan stok produk: ");
-        int stok = scanner.nextInt();
-        System.out.print("Masukkan Harga satuan produk: ");
-        double harga = scanner.nextDouble();
-        scanner.nextLine();
+        kategori = !"".equals(kategori.trim()) ? kategori : oldProduk.getKategori();
+        
+        System.out.printf("Masukkan stok produk (%s): ", oldProduk.getStok());
+        String inputString = scanner.nextLine().replaceAll("[^0-9]", "");
+        int stok = "".equals(inputString.trim()) ? oldProduk.getStok() : Integer.parseInt(inputString);
+        
+        System.out.printf("Masukkan Harga satuan produk (%s): ", oldProduk.getHarga());
+        String inputString2 = scanner.nextLine().replaceAll("^[0-9]+\\.?[0-9]*$", "");
+        double harga = "".equals(inputString2.trim()) ? oldProduk.getHarga() : Double.parseDouble(inputString2);
+
         Produk produk = new Produk(kode, nama, stok, harga, kategori);
 
         inventory.ubahProduk(cekKode, produk);
