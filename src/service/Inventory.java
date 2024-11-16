@@ -1,4 +1,5 @@
 package service;
+
 import java.util.ArrayList;
 
 import model.Kategori;
@@ -79,5 +80,46 @@ public class Inventory {
         } else {
             System.out.println("Produk tidak ditemukan.");
         }
+    }
+
+    // Memampilkan semua Kategori
+    public void tampilkanKategori() {
+        for (Kategori kategori : kategoriList) {
+            System.out.println(kategori);
+        }
+    }
+
+    // Mendapatkan detail kategori berdasarkan nama
+    public Kategori detailKategori(String nama) {
+        for (Kategori kategori : kategoriList) {
+            if (kategori.getNama().equalsIgnoreCase(nama)) {
+                return kategori;
+            }
+        }
+        System.out.println("Kategori dengan nama : " + nama + ", tidak ditemukan.");
+        return null;
+
+    }
+
+    // Mengubah nama Kategori
+    public void ubahKategori(String namaLama, String namaBaru) {
+        Kategori kategori = detailKategori(namaLama);
+        if (kategori != null) {
+            kategori.setNama(namaBaru);
+            System.out.println("Kategori berhasil diubah menjadi: " + namaBaru);
+        }
+    }
+
+    // Menjual produk dari stok
+    // public void jualProduk(Produk produk, int qty) {
+    //     if (produk.setStok(produk.getStok() - qty);
+    //     System.out.println("Produk " +produk.getNama() + "berhasil dijual sebanyak " + qty + "unit");
+
+    // }
+
+    
+    // Menambah kategori ke dalam inventory
+    public void tambahKategori(Kategori kategori) {
+        kategoriList.add(kategori);
     }
 }
