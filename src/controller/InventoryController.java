@@ -122,10 +122,20 @@ public class InventoryController {
     }
 
     public void jualBarang() {
-        System.out.println("Under Maintenance");
+        System.out.print("Masukkan kode produk: ");
+        String kodeProduk = scanner.nextLine();
+        System.out.print("Masukkan jumlah stok yang dijual: ");
+        int jumlah = Integer.parseInt(scanner.nextLine());
+
+        inventory.transaksiPenjualan(kodeProduk, jumlah);
     }
 
     public void beliBarang() {
-        System.out.println("Under Maintenance");
+        System.out.print("Masukkan kode produk: ");
+        String kodeProduk = scanner.nextLine();
+        System.out.print("Masukkan jumlah stok yang dibeli: ");
+        int jumlah = Integer.parseInt(scanner.nextLine());
+
+        inventory.transaksiPembelian(kodeProduk, jumlah);
     }
 }

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import model.Kategori;
 import model.Produk;
+import service.transaksi.Beli;
+import service.transaksi.Jual;
+import service.transaksi.Transaksi;
 
 public class Inventory {
     // class Produk nya masih sementara
@@ -94,7 +97,7 @@ public class Inventory {
         int index = 1;
         System.out.println("Berikut list dari kategori:");
         for (Kategori kategori : kategoriList) {
-            System.out.printf("%s. %s\n",index, kategori.getNama());
+            System.out.printf("%s. %s\n", index, kategori.getNama());
             index++;
         }
     }
@@ -133,9 +136,32 @@ public class Inventory {
         for (Kategori itemKategori : kategoriList) {
             if (itemKategori.getNama().equalsIgnoreCase(kategori.getNama())) {
                 return;
-            } else {
             }
         }
         kategoriList.add(kategori);
+    }
+
+    // Transaksi Penjualan Produk
+    public void transaksiPenjualan(String kode, int jumlah) {
+        for (Produk produk : produkList) {
+            if (!produk.getKode().equalsIgnoreCase(kode)) {
+                System.out.println("Produk tidak ditemukan.");
+                return;
+            }
+            Transaksi jual = new Jual(produk, jumlah);
+            jual.proses();
+        }
+    }
+
+    // Transaksi Pembelian
+    public void transaksiPembelian(String kode, int jumlah) {
+        for (Produk produk : produkList) {
+            if (!produk.getKode().equalsIgnoreCase(kode)) {
+                System.out.println("Produk tidak ditemukan.");
+                return;
+            }
+            Transaksi beli = new Beli(produk, jumlah);
+            beli.proses();
+        }
     }
 }

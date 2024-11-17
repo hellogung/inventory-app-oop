@@ -50,6 +50,20 @@ public class Produk extends Item {
         return totalNilai;
     }
 
+    public void tambahStok(int kuantitas) {
+        stok += kuantitas;
+    }
+
+    public boolean kurangiStok(int kuantitas) {
+        if (stok >= kuantitas) {
+            stok -= kuantitas;
+            return true;
+        } else {
+            System.out.println("Stok tidak cukup");
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "Produk{" +
