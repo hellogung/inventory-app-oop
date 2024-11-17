@@ -27,7 +27,7 @@ public class InventoryController {
         System.out.print("Masukkan Harga satuan produk: ");
         double harga = scanner.nextDouble();
         scanner.nextLine();
-        Produk produk = new Produk(kode, nama, stok, harga, kategori);
+        Produk produk = new Produk(kode, nama, kategori, stok, harga);
         inventory.tambahProduk(produk);
         inventory.tambahKategori(new Kategori(kategori));
     }
@@ -82,7 +82,7 @@ public class InventoryController {
         String inputString2 = scanner.nextLine().replaceAll("^[0-9]+\\.?[0-9]*$", "");
         double harga = "".equals(inputString2.trim()) ? oldProduk.getHarga() : Double.parseDouble(inputString2);
 
-        Produk produk = new Produk(kode, nama, stok, harga, kategori);
+        Produk produk = new Produk(kode, nama, kategori, stok, harga);
 
         inventory.ubahProduk(cekKode, produk);
     }

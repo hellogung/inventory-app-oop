@@ -1,20 +1,29 @@
 package model;
 
-public class Produk {
-    private String kode;
-    private String nama;
-    private String kategori;
-    private int stok;
-    private double harga;
-    private double totalNilai;
+abstract class Item {
+    public String kode;
+    public String nama;
+    public String kategori;
+    public int stok;
+    public double harga;
+    public double totalNilai;
 
-    public Produk(String kode, String nama, int stok, double harga, String kategori) {
+    public Item(String kode, String nama, String kategori, int stok, double harga) {
         this.kode = kode;
         this.nama = nama;
         this.stok = stok;
         this.harga = harga;
         this.kategori = kategori;
         this.totalNilai = harga * stok;
+    }
+
+    public abstract String toString();
+}
+
+public class Produk extends Item {
+
+    public Produk(String kode, String nama, String kategori, int stok, double harga) {
+        super(kode, nama, kategori, stok, harga);
     }
 
     public String getKode() {
