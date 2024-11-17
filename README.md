@@ -35,6 +35,7 @@ Dalam aplikasi inventory ini ada beberapa fitur yang disediakan:
 ## ▶️ Cara Menjalankan Aplikasi
 Arahkan terminal ke folder bin atau out. Kemudian ketikan perintah ini
 ```shell
+cd bin
 java Main
 ```
 
