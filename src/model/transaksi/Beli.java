@@ -1,4 +1,4 @@
-package service.transaksi;
+package model.transaksi;
 
 import model.Produk;
 

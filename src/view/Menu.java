@@ -12,20 +12,6 @@ public class Menu {
         boolean ulangi = true;
 
         while (ulangi) {
-            // 1. Tampilkan semua produk
-            // 2. Tambah Produk
-            // 3. Ubah Produk
-            // 4. Hapus Produk
-
-            // 5. Lihat Semua Kategori dan Total Barang
-            // 6. Lihat Kategori Tertentu
-            // 7. Ubah Nama Kategori
-
-            // 8. Jual Barang
-            // 9. Beli Barang
-
-            // 10. Keluar
-
             try {
                 System.out.println("Menu:");
                 System.out.println("1. Tampilkan Semua Produk");
@@ -38,8 +24,8 @@ public class Menu {
                 System.out.println("7. Lihat Kategori Tertentu");
                 System.out.println("8. Ubah Nama Kategori");
 
-                System.out.println("9. Jual Barang (Maintenance)");
-                System.out.println("10. Beli Barang (Maintenance)");
+                System.out.println("9. Jual Barang");
+                System.out.println("10. Beli Barang");
 
                 System.out.println("11. Keluar");
 

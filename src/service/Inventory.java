@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import model.Kategori;
 import model.Produk;
-import service.transaksi.Beli;
-import service.transaksi.Jual;
-import service.transaksi.Transaksi;
+import model.transaksi.Beli;
+import model.transaksi.Jual;
+import model.transaksi.Transaksi;
 
 public class Inventory {
     // class Produk nya masih sementara

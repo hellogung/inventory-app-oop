@@ -1,4 +1,4 @@
-package service.transaksi;
+package model.transaksi;
 
 public interface Transaksi {
     void proses();
