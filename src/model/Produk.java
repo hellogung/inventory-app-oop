@@ -8,7 +8,6 @@ public class Produk {
     private double harga;
     private double totalNilai;
 
-
     public Produk(String kode, String nama, int stok, double harga, String kategori) {
         this.kode = kode;
         this.nama = nama;

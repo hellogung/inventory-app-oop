@@ -38,6 +38,7 @@ public class Inventory {
         String kode = produk.getKode();
         if (!this.cekProduk(kode)) {
             produkList.add(produk);
+            tambahKategori(new Kategori(produk.getKategori()));
             System.out.println("Produk berhasil ditambahkan.");
             return;
         } else {
@@ -90,8 +91,11 @@ public class Inventory {
 
     // Memampilkan semua Kategori
     public void tampilkanKategori() {
+        int index = 1;
+        System.out.println("Berikut list dari kategori:");
         for (Kategori kategori : kategoriList) {
-            System.out.println(kategori);
+            System.out.printf("%s. %s\n",index, kategori.getNama());
+            index++;
         }
     }
 
@@ -107,6 +111,14 @@ public class Inventory {
 
     }
 
+    public void tampilkanKategoriTertentu(String kategori) {
+        for (Produk produk : produkList) {
+            if (produk.getKategori().equalsIgnoreCase(kategori)) {
+                System.out.println(produk.toString());
+            }
+        }
+    }
+
     // Mengubah nama Kategori
     public void ubahKategori(String namaLama, String namaBaru) {
         Kategori kategori = detailKategori(namaLama);
@@ -116,16 +128,14 @@ public class Inventory {
         }
     }
 
-    // Menjual produk dari stok
-    // public void jualProduk(Produk produk, int qty) {
-    //     if (produk.setStok(produk.getStok() - qty);
-    //     System.out.println("Produk " +produk.getNama() + "berhasil dijual sebanyak " + qty + "unit");
-
-    // }
-
-    
     // Menambah kategori ke dalam inventory
     public void tambahKategori(Kategori kategori) {
+        for (Kategori itemKategori : kategoriList) {
+            if (itemKategori.getNama().equalsIgnoreCase(kategori.getNama())) {
+                return;
+            } else {
+            }
+        }
         kategoriList.add(kategori);
     }
 }

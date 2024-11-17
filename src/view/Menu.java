@@ -32,11 +32,11 @@ public class Menu {
                 System.out.println("2. Tambah Produk");
                 System.out.println("3. Ubah Produk");
                 System.out.println("4. Cari Produk");
-                System.out.println("5. Hapus Produk (Maintenance)");
+                System.out.println("5. Hapus Produk");
 
-                System.out.println("6. Lihat Semua Kategori dan Total Barang (Maintenance)");
-                System.out.println("7. Lihat Kategori Tertentu (Maintenance)");
-                System.out.println("8. Ubah Nama Kategori (Maintenance)");
+                System.out.println("6. Lihat Semua Kategori dan Total Barang");
+                System.out.println("7. Lihat Kategori Tertentu");
+                System.out.println("8. Ubah Nama Kategori");
 
                 System.out.println("9. Jual Barang (Maintenance)");
                 System.out.println("10. Beli Barang (Maintenance)");
@@ -62,6 +62,26 @@ public class Menu {
 
                     case 4:
                         inventory.cariProduk();
+                        break;
+
+                    case 5:
+                        inventory.hapusProduk();
+                        break;
+
+                    case 6:
+                        inventory.lihatSemuaKategori();
+                        break;
+                    case 7:
+                        inventory.lihatKategoriTertentu();
+                        break;
+                    case 8:
+                        inventory.ubahKategori();
+                        break;
+                    case 9:
+                        inventory.jualBarang();
+                        break;
+                    case 10:
+                        inventory.beliBarang();
                         break;
 
                     case 11:
