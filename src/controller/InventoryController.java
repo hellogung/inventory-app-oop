@@ -27,8 +27,11 @@ public class InventoryController {
         System.out.print("Masukkan Harga satuan produk: ");
         double harga = scanner.nextDouble();
         scanner.nextLine();
+
         Produk produk = new Produk(kode, nama, kategori, stok, harga);
+
         inventory.tambahProduk(produk);
+
         inventory.tambahKategori(new Kategori(kategori));
     }
 
@@ -107,9 +110,9 @@ public class InventoryController {
     }
 
     public void lihatKategoriTertentu() {
-        System.out.print("Masukkan kode produk: ");
+        System.out.print("Masukkan kategori: ");
         String kategori = scanner.nextLine();
-        inventory.tampilkanKategoriTertentu(kategori);
+        inventory.detailKategori(kategori, true);
     }
 
     public void ubahKategori() {

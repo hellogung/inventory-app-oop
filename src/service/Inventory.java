@@ -111,7 +111,16 @@ public class Inventory {
         }
         System.out.println("Kategori dengan nama : " + nama + ", tidak ditemukan.");
         return null;
+    }
 
+    public void detailKategori(String nama, boolean display) {
+        for (Kategori kategori : kategoriList) {
+            if (kategori.getNama().equalsIgnoreCase(nama)) {
+                System.out.println(kategori);
+                return;
+            }
+        }
+        System.out.println("Kategori dengan nama : " + nama + ", tidak ditemukan.");
     }
 
     public void tampilkanKategoriTertentu(String kategori) {
